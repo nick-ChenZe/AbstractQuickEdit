@@ -4,6 +4,7 @@
 <p align="middle">A simple utility to create quick edit component.</p>
 
 [![Build Status](https://travis-ci.com/nick-ChenZe/AbstractQuickEdit.svg?branch=master)](https://travis-ci.com/nick-ChenZe/AbstractQuickEdit)
+[![codecov](https://codecov.io/gh/nick-ChenZe/AbstractQuickEdit/branch/master/graph/badge.svg)](https://codecov.io/gh/nick-ChenZe/AbstractQuickEdit)
 
 ## ⚙️ Installation
 ### npm
