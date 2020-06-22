@@ -3,7 +3,7 @@ import c from 'classnames';
 import {useDerivedState} from '@huse/derived-state';
 import {useClickOutside} from '@huse/click-outside';
 import mapValues from 'lodash.mapvalues';
-import {isEsc, isEnter} from './utils';
+import {isEsc, isEnter, nameCapitalized} from './utils';
 
 interface Options {
     defaultEditComponentProps?: {[key: string]: any};
@@ -60,10 +60,6 @@ const register = <T extends {} = {}, S extends {} = {}>(
                     return;
                 }
 
-                if (shouldRenderEditComponent === newStatus) {
-                    return;
-                }
-
                 if (onEditChange) {
                     onEditChange(newStatus);
                 }
@@ -116,7 +112,7 @@ const register = <T extends {} = {}, S extends {} = {}>(
                     } else {
                         switchEditStatus(true);
                     }
-                } else if (isEsc(keyCode)) {
+                } else if (isEsc(keyCode) && shouldRenderEditComponent) {
                     switchEditStatus(false, {
                         fireStateChange: value,
                     });
@@ -173,7 +169,7 @@ const register = <T extends {} = {}, S extends {} = {}>(
     };
 
     if (typeof ComponentIn === 'string') {
-        ComponetOut.displayName = ComponentIn;
+        ComponetOut.displayName = nameCapitalized(ComponentIn);
         return ComponetOut as typeof ComponetOut & S;
     }
 

@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`test AbstractQuickEdit.register should render build-in edit component by press enter 1`] = `
+<div
+  className="quick-edit quick-edit-editing"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  tabIndex={0}
+>
+  <input
+    key="true"
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`test AbstractQuickEdit.register should render build-in edit component by press enter 2`] = `
+<div
+  className="quick-edit quick-edit-editing"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  tabIndex={0}
+>
+  <input
+    key="true"
+    onChange={[Function]}
+  />
+</div>
+`;
+
 exports[`test AbstractQuickEdit.register should render build-in input component correct 1`] = `
 <div
   className="quick-edit"
@@ -44,4 +72,31 @@ exports[`test AbstractQuickEdit.register should render build-in input component 
     onChange={[Function]}
   />
 </div>
+`;
+
+exports[`test AbstractQuickEdit.register should render custom edit component corrent 1`] = `
+<CustomInput
+  display={[Function]}
+  onChange={[Function]}
+  transformValue={[Function]}
+  value="Hello world"
+/>
+`;
+
+exports[`test AbstractQuickEdit.register should render custom edit component corrent 2`] = `
+<CustomInput
+  display={[Function]}
+  onChange={[Function]}
+  transformValue={[Function]}
+  value="Hello world"
+/>
+`;
+
+exports[`test AbstractQuickEdit.register should render disabled build-in edit component correct 1`] = `
+<div
+  className="quick-edit quick-edit-disabled"
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  tabIndex={0}
+/>
 `;

@@ -7,6 +7,6 @@ export const isEnter = (keyCode: number): boolean => {
 
 export const isEsc = (keyCode: number): boolean => {
     return keyCode === ESC_KEYCODE;
-}
+};
 
-export const identity = (...args: any[]) => args;
+export const nameCapitalized = (name: string) => name.charAt(0).toUpperCase() + name.slice(1);
