@@ -1,6 +1,6 @@
 {
-  "name": "quickedit",
-  "version": "1.0.0",
+  "name": "react-abstract-quick-edit",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "sideEffects": false,

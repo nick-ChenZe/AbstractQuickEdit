@@ -5,11 +5,11 @@
 
 [![Build Status](https://travis-ci.com/nick-ChenZe/AbstractQuickEdit.svg?branch=master)](https://travis-ci.com/nick-ChenZe/AbstractQuickEdit)
 [![codecov](https://codecov.io/gh/nick-ChenZe/AbstractQuickEdit/branch/master/graph/badge.svg)](https://codecov.io/gh/nick-ChenZe/AbstractQuickEdit)
-
+[![npm version](https://badge.fury.io/js/react-abstract-quick-edit.svg)](https://badge.fury.io/js/react-abstract-quick-edit)
 ## ⚙️ Installation
 ### npm
 ```bash
-$ npm install abstract-quick-edit
+$ npm install react-abstract-quick-edit
 ```
 
 ## 🚀 How to use
@@ -17,7 +17,7 @@ $ npm install abstract-quick-edit
 You can use `AbstractQuickEdit` to integrate browser built-in editing component easily.
 
 ```tsx
-import AbstractQuickEdit from 'abstract-quick-edit';
+import AbstractQuickEdit from 'react-abstract-quick-edit';
 import {useInputValue} from '@huse/input-value';
 
 interface InputType {
@@ -64,7 +64,7 @@ const App = () => {
 You can integrate any other social ui component library such as `ant-design` by `registerAll` 
 ```tsx
 // quickEdit.ts
-import AbstractQuickEdit from 'abstract-quick-edit';
+import AbstractQuickEdit from 'react-abstract-quick-edit';
 import {Input, Select} from 'antd';
 
 export default AbstractQuickEdit.registerAll(
