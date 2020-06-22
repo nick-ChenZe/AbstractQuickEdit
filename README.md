@@ -1,5 +1,9 @@
+
+<p align="middle" ><img src="https://user-images.githubusercontent.com/12672355/85242194-e59f9880-b470-11ea-84f1-b43810f20b29.png" /></p>
 <h2 align="middle">AbstractQuickEdit</h2>
 <p align="middle">A simple utility to create quick edit component.</p>
+
+[![Build Status](https://travis-ci.com/nick-ChenZe/AbstractQuickEdit.svg?branch=master)](https://travis-ci.com/nick-ChenZe/AbstractQuickEdit)
 
 ## ⚙️ Installation
 ### npm
