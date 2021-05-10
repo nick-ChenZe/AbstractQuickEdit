@@ -135,7 +135,7 @@ const register = <P extends {onChange?: (...args: any[]) => any, value?: unknown
             event => {
                 const {keyCode} = event;
 
-                if (isEnter(keyCode)) {
+                if (isEnter(keyCode) && !disableEnterKey) {
                     if (shouldRenderEditComponent) {
                         switchEditStatus(false, {
                             fireOnChange: editValue,
