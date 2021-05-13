@@ -25,7 +25,7 @@ const AntInput = AbstractQuickEdit.register(AntdInput, {
     },
 });
 
-const AntSelect = AbstractQuickEdit.register<{}, {Option: any}>(AntdSelect, {
+const AntSelect = AbstractQuickEdit.register(AntdSelect, {
     defaultEditComponentProps: {
         autoFocus: true,
     },
@@ -42,10 +42,11 @@ export const TextQuickEdit = () => {
 
     return (
         <>
+        22222
             <AntInput display={computedDisplay} transformValue={transformValue} onChange={setValue} value={value} />
             <AntSelect display={computedDisplay} onChange={console.log} value={value}>
-                <AntSelect.Option value="hello">hello</AntSelect.Option>
-                <AntSelect.Option value="world">world</AntSelect.Option>
+                <AntdSelect.Option value="hello">hello</AntdSelect.Option>
+                <AntdSelect.Option value="world">world</AntdSelect.Option>
             </AntSelect>
         </>
     );

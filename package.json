@@ -1,8 +1,8 @@
 {
   "name": "react-abstract-quick-edit",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "es/index.js",
   "sideEffects": false,
   "scripts": {
     "storybook": "start-storybook",
@@ -28,8 +28,10 @@
     "babel-eslint": "^11.0.0-beta.2",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
+    "css-loader": "^3.6.0",
     "enzyme": "^3.11.0",
     "husky": "^4.2.5",
+    "less-loader": "^6.1.2",
     "reskript": "^0.26.1"
   },
   "dependencies": {

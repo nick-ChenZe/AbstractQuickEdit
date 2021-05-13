@@ -67,7 +67,7 @@ You can integrate any other social ui component library such as `ant-design` by 
 import AbstractQuickEdit from 'react-abstract-quick-edit';
 import {Input, Select} from 'antd';
 
-export default AbstractQuickEdit.registerAll(
+export default AbstractQuickEdit.registerAll({
     Input: [
         Input,
         {
@@ -84,7 +84,7 @@ export default AbstractQuickEdit.registerAll(
             }
         }
     ]
-);
+});
 
 // App.tsx
 import {Input, Select} from './quickEdit';

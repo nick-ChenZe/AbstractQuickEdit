@@ -5247,7 +5247,7 @@ css-declaration-sorter@^4.0.1:
     postcss "^7.0.1"
     timsort "^0.3.0"
 
-css-loader@^3.0.0, css-loader@^3.5.3:
+css-loader@^3.0.0, css-loader@^3.5.3, css-loader@^3.6.0:
   version "3.6.0"
   resolved "https://registry.npm.taobao.org/css-loader/download/css-loader-3.6.0.tgz?cache=0&sync_timestamp=1592056810681&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcss-loader%2Fdownload%2Fcss-loader-3.6.0.tgz#2e4b2c7e6e2d27f8c8f28f61bffcd2e6c91ef645"
   integrity sha1-Lkssfm4tJ/jI8o9hv/zS5ske9kU=
@@ -9688,6 +9688,16 @@ less-loader@^6.1.0:
   version "6.1.1"
   resolved "https://registry.npm.taobao.org/less-loader/download/less-loader-6.1.1.tgz?cache=0&sync_timestamp=1591891599394&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fless-loader%2Fdownload%2Fless-loader-6.1.1.tgz#cb17cc2b7acba46e5d6932416e0ba8fa5964fcfe"
   integrity sha1-yxfMK3rLpG5daTJBbguo+llk/P4=
+  dependencies:
+    clone "^2.1.2"
+    less "^3.11.3"
+    loader-utils "^2.0.0"
+    schema-utils "^2.7.0"
+
+less-loader@^6.1.2:
+  version "6.1.2"
+  resolved "https://registry.npm.taobao.org/less-loader/download/less-loader-6.1.2.tgz?cache=0&sync_timestamp=1592829481910&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fless-loader%2Fdownload%2Fless-loader-6.1.2.tgz#793f2ab76dea3c4fca6a27f3effceab16fc3cd9a"
+  integrity sha1-eT8qt23qPE/Kaifz7/zqsW/DzZo=
   dependencies:
     clone "^2.1.2"
     less "^3.11.3"

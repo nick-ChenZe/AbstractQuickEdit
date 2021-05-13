@@ -8,7 +8,6 @@ exports[`test AbstractQuickEdit.register should render build-in edit component b
   tabIndex={0}
 >
   <input
-    key="true"
     onChange={[Function]}
   />
 </div>
@@ -22,7 +21,6 @@ exports[`test AbstractQuickEdit.register should render build-in edit component b
   tabIndex={0}
 >
   <input
-    key="true"
     onChange={[Function]}
   />
 </div>
@@ -45,7 +43,6 @@ exports[`test AbstractQuickEdit.register should render build-in input component 
   tabIndex={0}
 >
   <input
-    key="true"
     onChange={[Function]}
   />
 </div>
@@ -68,7 +65,6 @@ exports[`test AbstractQuickEdit.register should render build-in input component 
   tabIndex={0}
 >
   <input
-    key="true"
     onChange={[Function]}
   />
 </div>

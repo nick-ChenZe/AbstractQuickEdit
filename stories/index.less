@@ -1,0 +1,77 @@
+.doc-root {
+    color: #24292e;
+    padding: 32px;
+
+    &,
+    input,
+    select {
+        font-size: 16px;
+        height: 1.5em;
+    }
+
+    p {
+        img {
+            margin-left: 10px;
+        }
+    }
+
+    .button {
+        border: 1px solid #333;
+        color: #333;
+        background: transparent;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-appearance: none;
+        box-sizing: border-box;
+        cursor: pointer;
+        width: 160px;
+        height: 42px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        transition: all ease .2s;
+        margin: 0 5px;
+
+        &:hover {
+            background: #333;
+            color: white;
+        }
+    }
+}
+
+.demo {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    label {
+        flex: 0 50%;
+        max-width: 50%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        margin: 10px 0;
+    }
+
+    .system-input-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .system-input-wrapper:not(.quick-edit-editing) {
+        padding: 1px 2px;
+        border: 2px solid transparent;
+
+        &:hover {
+            outline: -webkit-focus-ring-color auto 1px;
+            outline-color: -webkit-focus-ring-color;
+            outline-style: auto;
+            outline-width: 1px;
+        }
+    }
+
+    .system-input {
+        display: block;
+        width: 100%;
+    }
+}
