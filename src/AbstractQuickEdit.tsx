@@ -18,7 +18,7 @@ interface Options {
     disableEnterKey?: boolean;
 }
 
-interface Props<Value, EventValue> {
+export interface Props<Value, EventValue> {
     // Value of edit component
     value: Value;
     // Decide which component should render, edit component or display.
@@ -186,6 +186,7 @@ const register = <P extends {onChange?: (...args: any[]) => any, value?: unknown
         return (
             <div ref={containerRef} className={classNames} tabIndex={0} onKeyDown={handleKeyDown} onClick={handleClick}>
                 {(editing ?? shouldRenderEditComponent) ? (
+                    // @ts-ignore
                     <ComponentIn
                         {...props}
                         {...defaultEditComponentProps}

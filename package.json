@@ -1,8 +1,9 @@
 {
   "name": "react-abstract-quick-edit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "main": "es/index.js",
+  "types": "es/index.d.ts",
   "sideEffects": false,
   "scripts": {
     "storybook": "start-storybook",
