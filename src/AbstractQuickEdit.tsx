@@ -15,6 +15,7 @@ import {isEsc, isEnter, nameCapitalized} from './utils';
 
 interface Options {
     defaultEditComponentProps?: {[key: string]: any};
+    disableEnterKey?: boolean;
 }
 
 interface Props<Value, EventValue> {
@@ -70,7 +71,7 @@ const register = <P extends {onChange?: (...args: any[]) => any, value?: unknown
         const containerRef = useRef(null);
         const [shouldRenderEditComponent, switchShouldRenderEditComponent] = useDerivedState(editing);
 
-        const {defaultEditComponentProps} = options;
+        const {defaultEditComponentProps, disableEnterKey} = options;
 
         const handleOnChangeWhenValueChanged = useCallback(
             newValue => {
@@ -135,7 +136,7 @@ const register = <P extends {onChange?: (...args: any[]) => any, value?: unknown
             event => {
                 const {keyCode} = event;
 
-                if (isEnter(keyCode)) {
+                if (isEnter(keyCode) && !disableEnterKey) {
                     if (shouldRenderEditComponent) {
                         switchEditStatus(false, {
                             fireOnChange: editValue,
@@ -149,7 +150,7 @@ const register = <P extends {onChange?: (...args: any[]) => any, value?: unknown
                     });
                 }
             },
-            [shouldRenderEditComponent, switchEditStatus, editValue, value]
+            [shouldRenderEditComponent, switchEditStatus, editValue, value, disableEnterKey]
         );
 
         const handleClick = useCallback(
