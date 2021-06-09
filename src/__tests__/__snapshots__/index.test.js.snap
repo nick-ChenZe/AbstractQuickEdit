@@ -1,73 +1,121 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`test AbstractQuickEdit.register should render build-in edit component by press enter 1`] = `
-<div
-  className="quick-edit quick-edit-editing"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  tabIndex={0}
+<ContextProvider
+  value={
+    Object {
+      "onChangeValueByEffect": [Function],
+    }
+  }
 >
-  <input
-    onChange={[Function]}
-  />
-</div>
+  <div
+    className="quick-edit quick-edit-editing"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex={0}
+  >
+    <input
+      onChange={[Function]}
+    />
+  </div>
+</ContextProvider>
 `;
 
 exports[`test AbstractQuickEdit.register should render build-in edit component by press enter 2`] = `
-<div
-  className="quick-edit quick-edit-editing"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  tabIndex={0}
+<ContextProvider
+  value={
+    Object {
+      "onChangeValueByEffect": [Function],
+    }
+  }
 >
-  <input
-    onChange={[Function]}
-  />
-</div>
+  <div
+    className="quick-edit quick-edit-editing"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex={0}
+  >
+    <input
+      onChange={[Function]}
+    />
+  </div>
+</ContextProvider>
 `;
 
 exports[`test AbstractQuickEdit.register should render build-in input component correct 1`] = `
-<div
-  className="quick-edit"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  tabIndex={0}
-/>
+<ContextProvider
+  value={
+    Object {
+      "onChangeValueByEffect": [Function],
+    }
+  }
+>
+  <div
+    className="quick-edit"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex={0}
+  />
+</ContextProvider>
 `;
 
 exports[`test AbstractQuickEdit.register should render build-in input component in edit mode 1`] = `
-<div
-  className="quick-edit quick-edit-editing"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  tabIndex={0}
+<ContextProvider
+  value={
+    Object {
+      "onChangeValueByEffect": [Function],
+    }
+  }
 >
-  <input
-    onChange={[Function]}
-  />
-</div>
+  <div
+    className="quick-edit quick-edit-editing"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex={0}
+  >
+    <input
+      onChange={[Function]}
+    />
+  </div>
+</ContextProvider>
 `;
 
 exports[`test AbstractQuickEdit.register should render build-in input component in edit mode 2`] = `
-<div
-  className="quick-edit"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  tabIndex={0}
-/>
+<ContextProvider
+  value={
+    Object {
+      "onChangeValueByEffect": [Function],
+    }
+  }
+>
+  <div
+    className="quick-edit"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex={0}
+  />
+</ContextProvider>
 `;
 
 exports[`test AbstractQuickEdit.register should render build-in input component in edit mode 3`] = `
-<div
-  className="quick-edit quick-edit-editing"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  tabIndex={0}
+<ContextProvider
+  value={
+    Object {
+      "onChangeValueByEffect": [Function],
+    }
+  }
 >
-  <input
-    onChange={[Function]}
-  />
-</div>
+  <div
+    className="quick-edit quick-edit-editing"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex={0}
+  >
+    <input
+      onChange={[Function]}
+    />
+  </div>
+</ContextProvider>
 `;
 
 exports[`test AbstractQuickEdit.register should render custom edit component corrent 1`] = `
@@ -89,10 +137,18 @@ exports[`test AbstractQuickEdit.register should render custom edit component cor
 `;
 
 exports[`test AbstractQuickEdit.register should render disabled build-in edit component correct 1`] = `
-<div
-  className="quick-edit quick-edit-disabled"
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  tabIndex={0}
-/>
+<ContextProvider
+  value={
+    Object {
+      "onChangeValueByEffect": [Function],
+    }
+  }
+>
+  <div
+    className="quick-edit quick-edit-disabled"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    tabIndex={0}
+  />
+</ContextProvider>
 `;

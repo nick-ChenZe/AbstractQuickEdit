@@ -6,6 +6,8 @@ import React, {
     useCallback,
     useRef,
     useMemo,
+    createContext,
+    useContext,
 } from 'react';
 import c from 'classnames';
 import {useDerivedState} from '@huse/derived-state';
@@ -18,6 +20,13 @@ interface Options {
     disableEnterKey?: boolean;
 }
 
+export interface IQuickEditContext {
+    onChangeValueByEffect: <T>(value: (value: T) => T | T) => void | T;
+}
+
+const QuickEditContext = createContext<IQuickEditContext>({onChangeValueByEffect: () => ({}) as any});
+export const useQuickEdit = () => useContext(QuickEditContext);
+const {Provider} = QuickEditContext;
 export interface Props<Value, EventValue> {
     // Value of edit component
     value: Value;
@@ -162,12 +171,29 @@ const register = <P extends {onChange?: (...args: any[]) => any, value?: unknown
             [switchEditStatus, shouldRenderEditComponent]
         );
 
+        const onChangeValueByEffect = useCallback(
+            updator => {
+                if (typeof updator === 'function') {
+                    handleOnChangeWhenValueChanged(updator(editValue));
+                }
+                else {
+                    handleOnChangeWhenValueChanged(updator);
+                }
+                switchEditStatus(false);
+            },
+            [editValue, handleOnChangeWhenValueChanged, switchEditStatus]
+        );
+
+        const contextValue = useMemo(
+            () => ({onChangeValueByEffect}),
+            [onChangeValueByEffect]
+        );
+
         useClickOutside(containerRef, () => {
             setTimeout(
                 () => {
                     if (shouldRenderEditComponent) {
-                        handleOnChangeWhenValueChanged(editValue);
-                        switchEditStatus(false);
+                        onChangeValueByEffect(editValue);
                     }
                 },
                 0
@@ -184,20 +210,28 @@ const register = <P extends {onChange?: (...args: any[]) => any, value?: unknown
         );
 
         return (
-            <div ref={containerRef} className={classNames} tabIndex={0} onKeyDown={handleKeyDown} onClick={handleClick}>
-                {(editing ?? shouldRenderEditComponent) ? (
-                    // @ts-ignore
-                    <ComponentIn
-                        {...props}
-                        {...defaultEditComponentProps}
-                        disabled={disabled}
-                        onChange={handleChange}
-                        value={editValue}
-                    />
-                ) : (
-                    displayComponent
-                )}
-            </div>
+            <Provider value={contextValue}>
+                <div
+                    ref={containerRef}
+                    className={classNames}
+                    tabIndex={0}
+                    onKeyDown={handleKeyDown}
+                    onClick={handleClick}
+                >
+                    {editing ?? shouldRenderEditComponent ? (
+                        // @ts-ignore
+                        <ComponentIn
+                            {...props}
+                            {...defaultEditComponentProps}
+                            disabled={disabled}
+                            onChange={handleChange}
+                            value={editValue}
+                        />
+                    ) : (
+                        displayComponent
+                    )}
+                </div>
+            </Provider>
         );
     };
 
