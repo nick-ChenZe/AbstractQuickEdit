@@ -78,6 +78,9 @@ const register = <P extends {onChange?: (...args: any[]) => any, value?: unknown
     }) => {
         const [editValue, setEditValue] = useDerivedState(value);
         const containerRef = useRef(null);
+        const editValueRef = useRef<any>(editValue);
+        editValueRef.current = editValue;
+
         const [shouldRenderEditComponent, switchShouldRenderEditComponent] = useDerivedState(editing);
 
         const {defaultEditComponentProps, disableEnterKey} = options;
@@ -172,16 +175,18 @@ const register = <P extends {onChange?: (...args: any[]) => any, value?: unknown
         );
 
         const onChangeValueByEffect = useCallback(
-            updator => {
+            (updator?: any) => {
+                // ensure the value is new value
+                const editValue = editValueRef.current;
                 if (typeof updator === 'function') {
                     handleOnChangeWhenValueChanged(updator(editValue));
                 }
                 else {
-                    handleOnChangeWhenValueChanged(updator);
+                    handleOnChangeWhenValueChanged(editValue);
                 }
                 switchEditStatus(false);
             },
-            [editValue, handleOnChangeWhenValueChanged, switchEditStatus]
+            [handleOnChangeWhenValueChanged, switchEditStatus]
         );
 
         const contextValue = useMemo(
@@ -193,7 +198,7 @@ const register = <P extends {onChange?: (...args: any[]) => any, value?: unknown
             setTimeout(
                 () => {
                     if (shouldRenderEditComponent) {
-                        onChangeValueByEffect(editValue);
+                        onChangeValueByEffect();
                     }
                 },
                 0
@@ -225,7 +230,7 @@ const register = <P extends {onChange?: (...args: any[]) => any, value?: unknown
                             {...defaultEditComponentProps}
                             disabled={disabled}
                             onChange={handleChange}
-                            value={editValue}
+                            value={value}
                         />
                     ) : (
                         displayComponent
